@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PERSONAL PORTFOLIO — single file, no dependencies.
+  Drop this into a GitHub repo named <username>.github.io as
+  "index.html" and it goes live at https://<username>.github.io
+
+  EDIT THESE (search for the word EDIT to find them all):
+    1. <title> and the name in the header
+    2. The one-paragraph intro
+    3. Contact links: email, GitHub, LinkedIn, CV
+    4. The second project card (your master's / university work)
+  Everything wrapped in [square brackets] is a placeholder.
+  ============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT 1: browser tab title -->
+<title>Thanasis Krikis — Digital Design Engineer</title>
+<meta name="description" content="Digital design engineer — RTL, FPGA and functional verification. Verilog, ASIC and FPGA flows, UVM.">
+<style>
+  :root{
+    --bg:#0d1117;
+    --panel:#141a22;
+    --line:#232c38;
+    --text:#e4e8ee;
+    --muted:#8b98a9;
+    --accent:#5ec8a0;
+    --accent-dim:#2f5f50;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- header ---------- */
+  header{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 14px
+  }
+  h1{
+    font-size:clamp(2rem,6vw,2.9rem);line-height:1.15;
+    margin:0 0 8px;letter-spacing:-.02em;font-weight:650
+  }
+  .role{
+    font-family:var(--mono);font-size:15px;color:var(--muted);margin:0 0 26px
+  }
+  .role span{color:var(--accent-dim)}
+  .intro{font-size:17px;color:#c3ccd8;max-width:62ch;margin:0 0 30px}
+  .links{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+  .links a{
+    display:inline-block;font-family:var(--mono);font-size:13.5px;
+    padding:7px 14px;border:1px solid var(--line);border-radius:6px;
+    color:var(--text);background:var(--panel);transition:border-color .15s,color .15s
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);
+    margin:0 0 26px;font-weight:500
+  }
+
+  /* ---------- skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+  .skill h3{font-size:14px;margin:0 0 8px;font-weight:600;color:var(--text)}
+  .skill p{margin:0;color:var(--muted);font-size:14.5px;font-family:var(--mono);line-height:1.7}
+
+  /* ---------- projects ---------- */
+  .project{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:24px 26px;margin-bottom:18px
+  }
+  .project:last-child{margin-bottom:0}
+  .project h3{margin:0 0 4px;font-size:19px;font-weight:620;letter-spacing:-.01em}
+  .project .meta{
+    font-family:var(--mono);font-size:12.5px;color:var(--accent);
+    margin:0 0 14px;letter-spacing:.03em
+  }
+  .project p{margin:0 0 14px;color:#c3ccd8;font-size:15.5px}
+  .project p:last-of-type{margin-bottom:0}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:16px 0 0;list-style:none}
+  .tags li{
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+    border:1px solid var(--line);border-radius:20px;padding:3px 11px
+  }
+  .project-link{font-family:var(--mono);font-size:13.5px}
+
+  /* ---------- contact ---------- */
+  .contact p{margin:0 0 18px;color:#c3ccd8;max-width:58ch}
+  footer{padding:36px 0 60px;color:var(--muted);font-family:var(--mono);font-size:12.5px}
+
+  @media (max-width:520px){
+    header{padding:60px 0 44px}
+    section{padding:42px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Digital &amp; Hardware Design</p>
+    <!-- EDIT 1: your name -->
+    <h1>Thanasis Krikis</h1>
+    <p class="role">RTL Design <span>/</span> Functional Verification <span>/</span> FPGA</p>
+
+    <!-- EDIT 2: your intro. Two or three sentences, no more. -->
+    <p class="intro">
+      Electrical engineer (MSc) working in digital hardware design. I write RTL in
+      Verilog, verify it in simulation, and I'm comfortable across both ASIC and
+      FPGA flows. Currently building lightweight cryptographic hardware and
+      deepening my verification work with UVM.
+    </p>
+
+    <!-- EDIT 3: replace the bracketed URLs. Delete any line you don't want. -->
+    <ul class="links">
+      <li><a href="mailto:athkrikis@innotomia.com">Email</a></li>
+      <li><a href="https://github.com/[your-username]">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/[your-profile]">LinkedIn</a></li>
+      <li><a href="cv.pdf">CV (PDF)</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>Design</h3>
+        <p>Verilog / SystemVerilog<br>RTL design<br>FSM &amp; datapath design</p>
+      </div>
+      <div class="skill">
+        <h3>Verification</h3>
+        <p>Testbench development<br>UVM<br>Questa Advanced Simulator</p>
+      </div>
+      <div class="skill">
+        <h3>Flows</h3>
+        <p>ASIC design flow<br>FPGA design flow<br>HLS</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3>Ascon-AEAD128 hardware implementation</h3>
+      <p class="meta">Verilog · NIST SP 800-232 · in progress</p>
+      <p>
+        A Verilog RTL implementation of Ascon, the lightweight authenticated
+        encryption standard selected by NIST. The design covers the permutation
+        core and the AEAD128 datapath, including handling of variable-length
+        associated data — the part where the control logic gets interesting.
+      </p>
+      <p>
+        Verified in simulation against the standard's test vectors using Questa
+        Advanced Simulator.
+      </p>
+      <ul class="tags">
+        <li>Verilog</li><li>Cryptographic hardware</li><li>RTL</li><li>Simulation</li>
+      </ul>
+      <!-- Add the repo link once it's public, or delete this line -->
+      <p style="margin-top:16px"><a class="project-link" href="https://github.com/[your-username]/[repo]">View on GitHub →</a></p>
+    </article>
+
+    <!-- ============================================================
+         EDIT 4: your master's / university project.
+         Tell me the details and I'll write this properly, or fill in
+         the brackets yourself. Keep it concrete: what the thing did,
+         what YOU built, how you validated it.
+         ============================================================ -->
+    <article class="project">
+      <h3>[Master's thesis / university project title]</h3>
+      <p class="meta">[Tools used] · [University] · [Year]</p>
+      <p>
+        [One or two sentences on what the project was and why it existed.
+        Lead with the engineering problem, not the coursework framing.]
+      </p>
+      <p>
+        [What you personally designed or implemented, and how you knew it
+        worked — measurements, simulation results, a working demo.]
+      </p>
+      <ul class="tags">
+        <li>[Tag]</li><li>[Tag]</li><li>[Tag]</li>
+      </ul>
+    </article>
+
+  </section>
+
+  <section class="contact">
+    <h2>Get in touch</h2>
+    <p>
+      I'm open to roles in RTL design, functional verification and FPGA
+      development across Europe. The fastest way to reach me is email.
+    </p>
+    <ul class="links">
+      <li><a href="mailto:athkrikis@innotomia.com">athkrikis@innotomia.com</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <!-- EDIT: year and name -->
+    © 2026 Thanasis Krikis · Built and hosted on GitHub Pages
+  </footer>
+
+</div>
+
+</body>
+</html>
